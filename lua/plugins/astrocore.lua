@@ -72,6 +72,72 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+        ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+        -- ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+        -- ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+        -- ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+
+        -- tables with just a `desc` key will be registered with which-key if it's installed
+        -- this is useful for naming menus
+        -- ["<Leader>b"] = { desc = "Buffers" },
+
+        -- setting a mapping to false will disable it
+        -- ["<C-S>"] = false,
+        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+        -- selection
+        [",a"] = { "<esc>ggVG<CR>", desc = "Select everything" },
+        ["<leader>sa"] = { "<esc>ggVG<CR>", desc = "Select everything" },
+
+        -- split line
+        ["<leader>sl"] = { '<esc>:.,1s/\\(\\"[A-Za-z0-9_-]*\\"[,]*\\)\\s*/\\r\\t\\1/g<CR>', desc = "Split line" },
+      },
+      v = {
+        -- visual selection
+        [",s"] = { "!sort<CR>", desc = "Sort lines" },
+        ["<leader>ss"] = { "!sort<CR>", desc = "Sort lines" },
+      },
+      i = {
+        ["<C-h>"] = {
+          "copilot#Dismiss()",
+          desc = "Dismiss Copilot suggestion",
+          noremap = true,
+          expr = true,
+          silent = true,
+          replace_keycodes = false,
+        },
+        ["<C-j>"] = {
+          "copilot#Next()",
+          desc = "Next Copilot suggestion",
+          noremap = true,
+          expr = true,
+          silent = true,
+          replace_keycodes = false,
+        },
+        ["<C-k>"] = {
+          "copilot#Previous()",
+          desc = "Previos Copilot suggestion",
+          noremap = true,
+          expr = true,
+          silent = true,
+          replace_keycodes = false,
+        },
+        ["<C-l>"] = {
+          "copilot#Accept('<CR>')",
+          desc = "Accept Copilot suggestion",
+          noremap = true,
+          expr = true,
+          silent = true,
+          replace_keycodes = false,
+        },
+        -- ["<C-y>"] = {
+        --   "<cmd>LinearIssues<cr><esc>",
+        --   desc = "Open Linear issues",
+        --   noremap = true,
+        --   expr = false,
+        --   silent = true,
+        --   replace_keycodes = false,
+        -- },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
