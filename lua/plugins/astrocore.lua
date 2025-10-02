@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -98,38 +96,38 @@ return {
         ["<leader>ss"] = { "!sort<CR>", desc = "Sort lines" },
       },
       i = {
-        ["<C-h>"] = {
-          "copilot#Dismiss()",
-          desc = "Dismiss Copilot suggestion",
-          noremap = true,
-          expr = true,
-          silent = true,
-          replace_keycodes = false,
-        },
-        ["<C-j>"] = {
-          "copilot#Next()",
-          desc = "Next Copilot suggestion",
-          noremap = true,
-          expr = true,
-          silent = true,
-          replace_keycodes = false,
-        },
-        ["<C-k>"] = {
-          "copilot#Previous()",
-          desc = "Previos Copilot suggestion",
-          noremap = true,
-          expr = true,
-          silent = true,
-          replace_keycodes = false,
-        },
-        ["<C-l>"] = {
-          "copilot#Accept('<CR>')",
-          desc = "Accept Copilot suggestion",
-          noremap = true,
-          expr = true,
-          silent = true,
-          replace_keycodes = false,
-        },
+        -- ["<C-h>"] = {
+        --   "copilot#Dismiss()",
+        --   desc = "Dismiss Copilot suggestion",
+        --   noremap = true,
+        --   expr = true,
+        --   silent = true,
+        --   replace_keycodes = false,
+        -- },
+        -- ["<C-j>"] = {
+        --   "copilot#Next()",
+        --   desc = "Next Copilot suggestion",
+        --   noremap = true,
+        --   expr = true,
+        --   silent = true,
+        --   replace_keycodes = false,
+        -- },
+        -- ["<C-k>"] = {
+        --   "copilot#Previous()",
+        --   desc = "Previos Copilot suggestion",
+        --   noremap = true,
+        --   expr = true,
+        --   silent = true,
+        --   replace_keycodes = false,
+        -- },
+        -- ["<C-l>"] = {
+        --   "copilot#Accept('<CR>')",
+        --   desc = "Accept Copilot suggestion",
+        --   noremap = true,
+        --   expr = true,
+        --   silent = true,
+        --   replace_keycodes = false,
+        -- },
         -- ["<C-y>"] = {
         --   "<cmd>LinearIssues<cr><esc>",
         --   desc = "Open Linear issues",

@@ -15,5 +15,13 @@ return {
   { import = "astrocommunity.pack.templ" },
   { import = "astrocommunity.pack.yaml" },
 
+  -- ai
+  { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.completion.avante-nvim" },
+  { import = "astrocommunity.completion.supermaven-nvim" },
+
+  -- editor
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+
   -- import/override with your plugins folder
 }

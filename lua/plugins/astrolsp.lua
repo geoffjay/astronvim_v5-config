@@ -1,7 +1,4 @@
--- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
--- Configuration documentation can be found with `:h astrolsp`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
+local util = require "lspconfig.util"
 
 ---@type LazySpec
 return {
@@ -43,6 +40,36 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      ruby_lsp = {
+        -- cmd = { "bundle", "exec", "ruby-lsp" },
+        cmd = { "/Users/geoff/.rbenv/shims/ruby-lsp" },
+        mason = false,
+        filetypes = { "ruby" },
+        root_dir = util.root_pattern("Gemfile", ".git"),
+        init_options = {
+          enabledFeatures = {
+            "documentHighlights",
+            "documentSymbols",
+            "foldingRanges",
+            "selectionRanges",
+            -- "semanticHighlighting",
+            "formatting",
+            "codeActions",
+          },
+        },
+        settings = {},
+      },
+      commands = {
+        FormatRuby = {
+          function()
+            vim.lsp.buf.format {
+              name = "ruby_lsp",
+              async = true,
+            }
+          end,
+          description = "Format using ruby-lsp",
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
